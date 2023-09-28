@@ -125,8 +125,29 @@
         c. che giorno della settimana sarà nello stesso giorno e mese di oggi ma tra un anno (il risultato dovrà essere il nome del giorno (Lunedì, Martedì, ...)
     </p>
 
+    @{
+        DateTime unaSettimanaFa = adesso.AddDays(-7);
+        string settimanaScorsa = unaSettimanaFa.ToString("yyyy-MM-dd HH:mm:ss");
 
+        string giornoSettimana = adesso.ToString("dddd");
 
+        DateTime previsione = adesso.AddYears(1);
+
+        string formatPrevisione = previsione.ToString("dddd");
+
+    }
+    
+    <h2>
+        a. @settimanaScorsa
+    </h2>
+
+    <h2>
+        b. @giornoSettimana
+    </h2>
+
+    <h2>
+        c. @formatPrevisione
+    </h2>
 
 
 </div>
