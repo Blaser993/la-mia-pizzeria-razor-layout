@@ -79,6 +79,36 @@
         4. Creare una List<int> di 20 numeri interi (generati random da 1 a 90, 1 e 90 inclusi) e mostrare in pagina solo i numeri compresi tra 20 e 70
     </p>
 
+    @{
+        List<int> numeriCasuali = GeneraNumeriCasuali(20, 1, 90);
+
+        // Stampa i numeri generati
+
+        static List<int> GeneraNumeriCasuali(int quantita, int minimo, int massimo)
+        {
+            List<int> numeriCasuali = new List<int>();
+            Random random = new Random();
+
+            for (int i = 0; i < quantita; i++)
+            {
+                int numeroCasuale = random.Next(minimo, massimo + 1);
+                numeriCasuali.Add(numeroCasuale);
+            }
+
+            return numeriCasuali;
+        }
+    }
+
+    <h2>
+        @foreach(int numero in numeriCasuali)
+        {
+            if (numero >= 20 && numero <= 70 )
+            {
+                <span>@numero</span>
+            }
+        }
+    </h2>
+
     <p>
         5. Stampare in pagina la data e l'ora attuale (usando la classe DateTime) con il formato anno-mese-giorno ore:minuti:secondi
     </p>
