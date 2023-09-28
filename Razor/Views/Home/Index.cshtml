@@ -82,8 +82,6 @@
     @{
         List<int> numeriCasuali = GeneraNumeriCasuali(20, 1, 90);
 
-        // Stampa i numeri generati
-
         static List<int> GeneraNumeriCasuali(int quantita, int minimo, int massimo)
         {
             List<int> numeriCasuali = new List<int>();
@@ -113,6 +111,12 @@
         5. Stampare in pagina la data e l'ora attuale (usando la classe DateTime) con il formato anno-mese-giorno ore:minuti:secondi
     </p>
 
+    @{
+        DateTime adesso = DateTime.Now;
+        string formatAdesso = adesso.ToString("yyyy-MM-dd HH:mm:ss");
+    }
+
+    <h2>@formatAdesso</h2>
 
     <p>
         6. Partendo dalla data di oggi (usando la classe DateTime) stampare in pagina <br />
@@ -120,4 +124,9 @@
         b. che giorno della settimana è oggi (il risultato dovrà essere il nome del giorno (Lunedì, Martedì, ...) <br />
         c. che giorno della settimana sarà nello stesso giorno e mese di oggi ma tra un anno (il risultato dovrà essere il nome del giorno (Lunedì, Martedì, ...)
     </p>
+
+
+
+
+
 </div>
