@@ -9,15 +9,71 @@
         Stampare il nostro nome e cognome all'interno di un tag h2
     </p>
 
+    @{
+        string mioNome = "Corrado";
+        string mioCognome = "de Pinto";
+    }
+
+    <h2>
+        @mioNome @mioCognome
+    </h2>
+
 
     <p>
         2. Creare una funzione che stampa la somma dei numeri che vanno da 1 a n (con n passato come parametro - n incluso)
         Stampare dentro uno span il risultato.
     </p>
 
+    @{
+        int Somma(int n){
+
+
+            int totale = 0;
+
+            for(int i=1; i <= n; i++)
+            {
+                
+                totale += i;
+
+            }
+            return totale;
+            
+        }
+    }
+
+    <h2>@Somma(3)</h2>
+
     <p>
         3. Contare quante volte la lettera a è presente nalla frase "nel mezzo del cammin di nostra vita" e stampare questo valore in pagina
     </p>
+
+    @{
+        int ContaAInFrase(string frase){
+
+            string[] parole = frase.Split(' ');
+            int count = 0;
+
+            foreach (string parola in parole)
+            {
+                if (parola.Contains("a"))
+                {
+                    foreach (char carattere in parola)
+                    {
+                        if (carattere == 'a')
+                        {
+                            count++;
+                        }
+                    }
+                }
+            }
+
+            return count;
+        }
+    }
+
+    <h2>
+        @ContaAInFrase("nel mezzo del cammin di nostra vita")
+    </h2>
 
     <p>
         4. Creare una List<int> di 20 numeri interi (generati random da 1 a 90, 1 e 90 inclusi) e mostrare in pagina solo i numeri compresi tra 20 e 70
@@ -29,9 +85,9 @@
 
 
     <p>
-        6. Partendo dalla data di oggi (usando la classe DateTime) stampare in pagina
-        a. la data di 7 giorni fa
-        b. che giorno della settimana è oggi (il risultato dovrà essere il nome del giorno (Lunedì, Martedì, ...)
+        6. Partendo dalla data di oggi (usando la classe DateTime) stampare in pagina <br />
+        a. la data di 7 giorni fa <br />
+        b. che giorno della settimana è oggi (il risultato dovrà essere il nome del giorno (Lunedì, Martedì, ...) <br />
         c. che giorno della settimana sarà nello stesso giorno e mese di oggi ma tra un anno (il risultato dovrà essere il nome del giorno (Lunedì, Martedì, ...)
     </p>
 </div>
